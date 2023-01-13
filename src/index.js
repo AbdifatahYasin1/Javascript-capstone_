@@ -1,10 +1,11 @@
 import './style.css';
 import { addComment,updateUIWithComments,checkCommentsInput,updateUINumberOfComments, getComments,postComments} from './modules/comments';
 import { getLikes,
-    postLikes,
-    updateUI,
-  
-    like} from './modules/likes';
+  postLikes,
+  updateUI,
+
+  like,
+} from './modules/likes';
 
 const fontAwesome = document.createElement('link');
 fontAwesome.setAttribute('rel', 'stylesheet');
@@ -32,16 +33,16 @@ const fetchMealById = async (mealId) => {
   return data;
 };
 
- const mealsWithLikes = async () => {
-    const meals = await fetchAllMeals();
-    const likes = await getLikes();
-    const mealsWithLikes = meals.meals.map((meal) => {
-      const likesCount = likes.filter((like) => like.item_id === meal.idMeal);
-      meal.likes = likesCount[0]?.likes || 0;
-      return meal;
-    });
-    return mealsWithLikes;
-  };
+const mealsWithLikes = async () => {
+  const meals = await fetchAllMeals();
+  const likes = await getLikes();
+  const mealsWithLikes = meals.meals.map((meal) => {
+    const likesCount = likes.filter((like) => like.item_id === meal.idMeal);
+    meal.likes = likesCount[0]?.likes || 0;
+    return meal;
+  });
+  return mealsWithLikes;
+};
 
 // popup
 const popup = async (mealId) => {
@@ -176,9 +177,9 @@ const popup = async (mealId) => {
       e.preventDefault();
       const username = document.querySelector('#username').value;
       const comment = document.querySelector('#comment').value;
-      const notComment = document.querySelector(".noComment")
-      if(notComment){
-        notComment.remove()
+      const notComment = document.querySelector('.noComment');
+      if (notComment) {
+        notComment.remove();
       }
 
       addComment(meal.idMeal, username, comment, e);
@@ -189,7 +190,7 @@ const popup = async (mealId) => {
     const closeBtn = document.querySelector('.close-popup');
     closeBtn.addEventListener('click', () => {
       mealPopup.remove();
-      document.body.style.overflow = 'auto'; 
+      document.body.style.overflow = 'auto';
     });
   });
 };
