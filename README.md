@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <a name="readme-top"></a>
 
 <div align="center">
@@ -141,3 +142,6 @@ Give a ⭐️ if you like this project!
 This project is [MIT](https://github.com/AbdifatahYasin1/Javascript-capstone_.git) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+=======
+# Javascript-capstone_
+>>>>>>> d2b51f9ccc846061f7cd3e9b4ae7b2892fb99e1f
