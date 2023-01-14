@@ -27,7 +27,7 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 🎥 Meal Web app<a name="about-project"></a>
+# 🍴 Meal Web app<a name="about-project"></a>
 
 *Meal Web app* is a web app that allows you to view meal and add likes and comment it on your favourite Meals. 
 
