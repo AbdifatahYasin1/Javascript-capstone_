@@ -15,7 +15,7 @@
 # 📗 Table of Contents
 
 - [� Table of Contents](#-table-of-contents)
-  - [🎥 Movie Web app](#about-project)
+  - [🎥 Meal Web app](#about-project)
   - [🛠 Built With ](#-built-with-)
   - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
@@ -27,9 +27,9 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 🎥 Movie Web app<a name="about-project"></a>
+# 🎥 Meal Web app<a name="about-project"></a>
 
-*Meal Web app* is a web app that allows you to view movies and add likes and comment it on your favourite Meals. 
+*Meal Web app* is a web app that allows you to view meal and add likes and comment it on your favourite Meals. 
 
 Here are some features of the page:
 
