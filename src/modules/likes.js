@@ -5,39 +5,27 @@ export const getLikes = async () => {
   return data;
 };
 
-export const postLikes = async (id) => {
-  const uri = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/R0U3YhWaag3EdpAQTbkm/likes';
-  const response = await fetch(uri, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      item_id: id,
-    }),
-  });
-  const data = await response.text();
+export const fetchAllMeals = async () => {
+  const response = await fetch(
+    'https://www.themealdb.com/api/json/v1/1/search.php?s=',
+  );
+  const data = await response.json();
   return data;
 };
 
-export const updateUI = (id, likes) => {
-  const meal = document.getElementById(id);
-  const mealInfoDiv = meal.querySelector('.mealInfo');
-  const mealLikesDiv = mealInfoDiv.querySelector('.likes');
-  mealLikesDiv.innerHTML = likes;
-};
-
-export const like = async (id) => {
-  await postLikes(id);
-  getLikes().then((data) => {
-    const likesCount = data.filter((like) => like.item_id === id);
-    updateUI(id, likesCount[0]?.likes);
+export const mealsWithLikes = async () => {
+  const meals = await fetchAllMeals();
+  const likes = await getLikes();
+  const mealsWithLikes = meals.meals.map((meal) => {
+    const likesCount = likes.filter((like) => like.item_id === meal.idMeal);
+    meal.likes = likesCount[0]?.likes || 0;
+    return meal;
   });
+  return mealsWithLikes;
 };
 
 export default {
   getLikes,
-  postLikes,
-  updateUI,
-  like,
+  mealsWithLikes,
+  fetchAllMeals,
 };
