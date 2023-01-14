@@ -1,5 +1,5 @@
 import './style.css';
-import { getLikes, fetchAllMeals } from './modules/likes.js';
+import { getLikes, fetchAllMeals } from './modules/likes';
 
 const fontAwesome = document.createElement('link');
 fontAwesome.setAttribute('rel', 'stylesheet');
